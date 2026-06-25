@@ -1,0 +1,176 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": { "type": "vendor", "settings": {} },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "payment_terms": { "type": "payment_terms", "settings": {} },
+        "separator": { "type": "separator", "settings": {} },
+        "description": { "type": "description", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": {} },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": {} },
+        "complementary_products": { "type": "complementary_products", "settings": {} }
+      },
+      "block_order": [
+        "vendor", "title", "price", "payment_terms", "separator",
+        "description", "variant_picker", "quantity_selector",
+        "buy_buttons", "complementary_products"
+      ],
+      "settings": {}
+    },
+    "scrolling-marquee": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text-1": { "type": "text", "settings": { "text": "Samba" } },
+        "text-2": { "type": "text", "settings": { "text": "Built to move" } },
+        "text-3": { "type": "text", "settings": { "text": "Samba" } },
+        "text-4": { "type": "text", "settings": { "text": "Built to move" } },
+        "text-5": { "type": "text", "settings": { "text": "Samba" } },
+        "text-6": { "type": "text", "settings": { "text": "Built to move" } }
+      },
+      "block_order": ["text-1", "text-2", "text-3", "text-4", "text-5", "text-6"],
+      "settings": {
+        "background": "#1c1c1c",
+        "text_color": "#ffffff",
+        "scrolling_speed": 1,
+        "pause_on_hover": false,
+        "text_font": "heading",
+        "text_font_size_mobile": 28,
+        "text_font_size_desktop": 40,
+        "item_horizontal_spacing_mobile": 32,
+        "item_horizontal_spacing_desktop": 56,
+        "section_vertical_spacing_mobile": 16,
+        "section_vertical_spacing_desktop": 20,
+        "separate_section_with_border": false
+      }
+    },
+    "feature-icons": {
+      "type": "text-with-icons",
+      "blocks": {
+        "icon-battery": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-star",
+            "title": "Long battery life",
+            "content": "<p>Play all day and into the night on a single charge. Samba keeps the music going when you need it most.</p>"
+          }
+        },
+        "icon-waterproof": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-shield",
+            "title": "Waterproof",
+            "content": "<p>Rain, splash, or poolside — Samba is built to handle it. Take it anywhere without worrying about the elements.</p>"
+          }
+        },
+        "icon-tws": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-earth",
+            "title": "True Wireless Stereo",
+            "content": "<p>Pair two Sambas together for full left-right stereo sound that fills the room.</p>"
+          }
+        }
+      },
+      "block_order": ["icon-battery", "icon-waterproof", "icon-tws"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "icon_color": "#ffffff",
+        "text_alignment": "center",
+        "stack_on_mobile": false,
+        "separate_section_with_border": false
+      }
+    },
+    "section-battery": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": { "text": "Battery" }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": { "text": "All-day sound, zero interruptions", "heading_tag": "h2" }
+        },
+        "body": {
+          "type": "richtext",
+          "settings": { "content": "<p>One charge keeps Samba going all day. Whether you're hosting at home or out all weekend, the music doesn't stop until you do.</p>" }
+        }
+      },
+      "block_order": ["subheading", "heading", "body"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "image_position": "left",
+        "content_width": "medium",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false
+      }
+    },
+    "section-waterproof": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": { "text": "Waterproof" }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": { "text": "Take it anywhere", "heading_tag": "h2" }
+        },
+        "body": {
+          "type": "richtext",
+          "settings": { "content": "<p>Rain, splash, or full submersion — Samba's waterproof build means you never have to think twice about where you bring it. Pool party. Beach trip. Shower. All covered.</p>" }
+        }
+      },
+      "block_order": ["subheading", "heading", "body"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "image_position": "right",
+        "content_width": "medium",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false
+      }
+    },
+    "section-tws": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": { "text": "True Wireless Stereo" }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": { "text": "Double the sound", "heading_tag": "h2" }
+        },
+        "body": {
+          "type": "richtext",
+          "settings": { "content": "<p>Connect two Sambas wirelessly for real left-right stereo separation. The kind of sound that fills a space and makes people stop and listen.</p>" }
+        }
+      },
+      "block_order": ["subheading", "heading", "body"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "image_position": "left",
+        "content_width": "medium",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "scrolling-marquee",
+    "feature-icons",
+    "section-battery",
+    "section-waterproof",
+    "section-tws",
+    "related-products"
+  ]
+}
