@@ -11,6 +11,25 @@
   "type": "header",
   "name": "Header group",
   "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement-test": {
+          "type": "message",
+          "settings": {
+            "text": "test"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-test"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "enable_sticky": false,
+        "autoplay": false
+      }
+    },
     "countdown-timer": {
       "type": "countdown-condensed",
       "settings": {
@@ -53,6 +72,7 @@
     }
   },
   "order": [
+    "announcement-bar",
     "countdown-timer",
     "header"
   ]
