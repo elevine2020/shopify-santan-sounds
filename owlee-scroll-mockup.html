@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santana Leather Bound Speaker — Santana Sounds</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0a0a; color: #fff; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+  /* NAV */
+  nav {
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 52px;
+    border-bottom: 1px solid #222;
+    position: sticky; top: 0; z-index: 100;
+  }
+  .nav-logo { font-size: 14px; font-weight: 700; letter-spacing: 2px; }
+  .nav-logo span { color: #888; font-weight: 400; }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { color: #888; text-decoration: none; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { background: #fff; color: #000; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; padding: 8px 18px; text-decoration: none; }
+
+  /* HERO */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 32px;
+  }
+  .hero-gallery {}
+  .hero-main-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 4px;
+    background: #1c1c1c;
+  }
+  .hero-thumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+  }
+  .hero-thumbs img {
+    width: calc(25% - 8px);
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid #2a2a2a;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  .hero-thumbs img:hover, .hero-thumbs img.active { opacity: 1; border-color: #fff; }
+
+  .hero-info { padding: 0 0 0 56px; }
+  .badge { display: inline-block; background: #333; font-size: 10px; letter-spacing: 1px; padding: 4px 10px; border-radius: 2px; margin-bottom: 16px; }
+  .badge span { color: #f5a623; }
+  .hero-info h1 { font-size: 36px; font-weight: 800; letter-spacing: -0.5px; line-height: 1; margin-bottom: 6px; }
+  .hero-info .subtitle { color: #888; font-size: 13px; margin-bottom: 12px; }
+  .stars { color: #f5a623; font-size: 14px; margin-bottom: 4px; }
+  .rating-sub { color: #555; font-size: 11px; margin-bottom: 20px; }
+  .price { font-size: 32px; font-weight: 800; margin-bottom: 4px; }
+  .was { color: #555; font-size: 12px; margin-bottom: 28px; }
+  label.qty-label { display: block; color: #555; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+  .qty {
+    display: inline-flex; align-items: center; border: 1px solid #2a2a2a;
+    border-radius: 3px; margin-bottom: 16px;
+  }
+  .qty button { background: none; border: none; color: #fff; font-size: 18px; padding: 6px 14px; cursor: pointer; }
+  .qty span { font-size: 14px; padding: 0 8px; }
+  .btn-primary {
+    display: block; width: 100%; background: #fff; color: #000;
+    font-size: 13px; font-weight: 700; letter-spacing: 1.5px; padding: 14px;
+    border: none; cursor: pointer; margin-bottom: 10px; text-transform: uppercase;
+  }
+  .btn-secondary {
+    display: block; width: 100%; background: transparent; color: #fff;
+    font-size: 13px; letter-spacing: 1.5px; padding: 13px;
+    border: 1px solid #2a2a2a; cursor: pointer; text-transform: uppercase;
+  }
+  .ship-note { color: #555; font-size: 11px; text-align: center; margin-top: 12px; }
+
+  /* MARQUEE */
+  .marquee-wrap {
+    background: #1c1c1c;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+    overflow: hidden;
+    padding: 10px 0;
+    white-space: nowrap;
+  }
+  .marquee-track {
+    display: inline-block;
+    animation: scroll 22s linear infinite;
+  }
+  .marquee-track span {
+    font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+    margin-right: 56px;
+  }
+  .marquee-track span.dot { color: #f5a623; margin-right: 56px; }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* FEATURE ICONS */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #1c1c1c;
+    border-top: 1px solid #1c1c1c;
+    border-bottom: 1px solid #1c1c1c;
+  }
+  .feature {
+    background: #0a0a0a;
+    text-align: center;
+    padding: 40px 32px;
+  }
+  .feature-icon {
+    width: 44px; height: 44px;
+    border: 1px solid #2a2a2a;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+    font-size: 18px;
+  }
+  .feature h3 { font-size: 13px; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; }
+  .feature p { color: #666; font-size: 12px; line-height: 1.7; max-width: 220px; margin: 0 auto; }
+
+  /* IMAGE + TEXT SECTIONS */
+  .section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 500px;
+  }
+  .section.reverse { direction: rtl; }
+  .section.reverse > * { direction: ltr; }
+  .section-img {
+    width: 100%;
+    height: 100%;
+    min-height: 440px;
+    object-fit: cover;
+    display: block;
+    background: #1c1c1c;
+  }
+  .section-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 64px 72px;
+  }
+  .section-text .eyebrow {
+    font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #555;
+    margin-bottom: 16px;
+  }
+  .section-text h2 { font-size: 32px; font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+  .section-text p { color: #666; font-size: 14px; line-height: 1.8; }
+  .section-divider { border: none; border-top: 1px solid #1c1c1c; margin: 0; }
+
+  /* VIDEO */
+  .video-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 32px;
+    text-align: center;
+  }
+  .video-section h2 {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #555;
+    margin-bottom: 12px;
+  }
+  .video-section .video-headline {
+    font-size: 28px; font-weight: 800; margin-bottom: 36px;
+  }
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #1c1c1c;
+  }
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+  }
+
+  /* SPECS */
+  .specs-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 32px;
+  }
+  .specs-section h2 {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #555;
+    text-align: center; margin-bottom: 40px;
+  }
+  .specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #1a1a1a;
+    font-size: 13px;
+  }
+  .spec-row:nth-child(odd) { background: #111; }
+  .spec-key { color: #555; }
+  .spec-val { font-weight: 600; text-align: right; }
+
+  /* TRUST BADGES */
+  .trust-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: #1c1c1c;
+    border-top: 1px solid #1c1c1c;
+    border-bottom: 1px solid #1c1c1c;
+  }
+  .trust-item {
+    background: #0a0a0a;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 28px 40px;
+  }
+  .trust-icon { font-size: 22px; }
+  .trust-item h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .trust-item p { color: #555; font-size: 11px; }
+
+  /* RELATED */
+  .related {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 32px;
+  }
+  .related h2 {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #555;
+    text-align: center; margin-bottom: 40px;
+  }
+  .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .related-card { background: #111; border: 1px solid #1c1c1c; border-radius: 4px; overflow: hidden; }
+  .related-card-img { width: 100%; aspect-ratio: 4/3; background: #1c1c1c; display: flex; align-items: center; justify-content: center; color: #333; font-size: 12px; }
+  .related-card-info { padding: 16px; }
+  .related-card-info h3 { font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .related-card-info .price { font-size: 16px; color: #fff; }
+
+  /* REVIEWS */
+  .reviews-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 32px;
+  }
+  .reviews-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+  .reviews-header h2 {
+    font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #555;
+  }
+  .reviews-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .summary-score { font-size: 48px; font-weight: 800; line-height: 1; }
+  .summary-stars { color: #f5a623; font-size: 18px; margin-bottom: 4px; }
+  .summary-count { color: #555; font-size: 12px; }
+  .summary-bars { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .bar-row { display: flex; align-items: center; gap: 10px; font-size: 11px; color: #555; }
+  .bar-track { flex: 1; height: 4px; background: #1c1c1c; border-radius: 2px; }
+  .bar-fill { height: 100%; background: #f5a623; border-radius: 2px; }
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .review-card {
+    background: #111;
+    border: 1px solid #1c1c1c;
+    border-radius: 4px;
+    padding: 24px;
+  }
+  .review-stars { color: #f5a623; font-size: 13px; margin-bottom: 12px; }
+  .review-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+  .review-body { color: #666; font-size: 13px; line-height: 1.7; margin-bottom: 16px; }
+  .review-meta { display: flex; align-items: center; justify-content: space-between; }
+  .reviewer { font-size: 12px; font-weight: 600; }
+  .review-date { font-size: 11px; color: #444; }
+  .verified { font-size: 10px; color: #4caf50; letter-spacing: 0.5px; margin-top: 2px; }
+  .review-helpful { font-size: 11px; color: #444; margin-top: 12px; }
+  .review-helpful span { color: #888; text-decoration: underline; cursor: pointer; }
+
+  /* FOOTER */
+  footer {
+    background: #080808;
+    border-top: 1px solid #1c1c1c;
+    text-align: center;
+    padding: 20px;
+    color: #333;
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SANTANA <span>SOUNDS</span></div>
+  <div class="nav-links">
+    <a href="#">Earbuds</a>
+    <a href="#">Headphones</a>
+    <a href="#">Speakers</a>
+    <a href="#">About</a>
+  </div>
+  <a href="#" class="nav-cta">SHOP NOW</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-gallery">
+    <img class="hero-main-img" id="mainImg"
+      src="https://cdnp1.stackassets.com/000006b4a4c4601c8047047fa58c714d8990ddc6/store/d1578caca68687a940bf50ee7c837dfbad59a1b36e1a227dbc7b58051465/product_30143_product_shots1.jpg"
+      alt="Santana Leather Bound Speaker">
+    <div class="hero-thumbs">
+      <img class="active" src="https://cdnp1.stackassets.com/000006b4a4c4601c8047047fa58c714d8990ddc6/store/d1578caca68687a940bf50ee7c837dfbad59a1b36e1a227dbc7b58051465/product_30143_product_shots1.jpg" alt="" onclick="setMain(this)">
+      <img src="https://cdnp3.stackassets.com/7187b72e8f5660dca3b6b6e738594663edccf620/store/eaeb3b6575633b276150be2072a561c6ba22e42022916c87ed2ceccfba01/product_30143_product_shots2.jpg" alt="" onclick="setMain(this)">
+      <img src="https://cdnp2.stackassets.com/2c9db532a73909cad091faa8444ffe4bad6b6168/store/1b04d5bfa5ad3bffa2291c4488a4dd405781a44121afd7674c90bd847fc2/product_30143_product_shots3.jpg" alt="" onclick="setMain(this)">
+      <img src="https://cdnp3.stackassets.com/8e9322df3c7a2f35665c11eb93a5cf03db3ca0b7/store/966d12fb2256c5d6e9323728d1eda09a34077dafc7d680f492678d99609d/product_30143_product_shots4.jpg" alt="" onclick="setMain(this)">
+    </div>
+  </div>
+
+  <div class="hero-info">
+    <div class="badge"><span>33% OFF</span> — Limited Time</div>
+    <h1>LEATHER BOUND SPEAKER</h1>
+    <div class="subtitle">Wireless Bluetooth Speaker</div>
+    <div class="stars">★★★★☆</div>
+    <div class="rating-sub">360° Soundstage™ · 20W · 9-Hour Battery</div>
+    <div class="price">$79.99</div>
+    <div class="was">Was $119.99 — You save $40.00</div>
+    <label class="qty-label">Quantity</label>
+    <div class="qty">
+      <button onclick="adj(-1)">−</button>
+      <span id="qty">1</span>
+      <button onclick="adj(1)">+</button>
+    </div>
+    <button class="btn-primary">ADD TO CART</button>
+    <button class="btn-secondary">ADD TO WISHLIST</button>
+    <div class="ship-note">Ships to Contiguous US · Est. delivery in 3–5 business days</div>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>LEATHER BOUND SPEAKER</span><span class="dot">✦</span>
+    <span>360° SOUNDSTAGE™</span><span class="dot">✦</span>
+    <span>9 HOURS BATTERY</span><span class="dot">✦</span>
+    <span>20W POWER</span><span class="dot">✦</span>
+    <span>LEATHER BOUND SPEAKER</span><span class="dot">✦</span>
+    <span>360° SOUNDSTAGE™</span><span class="dot">✦</span>
+    <span>9 HOURS BATTERY</span><span class="dot">✦</span>
+    <span>20W POWER</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="feature">
+    <div class="feature-icon">◉</div>
+    <h3>360° SOUNDSTAGE™</h3>
+    <p>Immersive 3D audio technology fills the room with rich, all-encompassing sound from every angle.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">⊕</div>
+    <h3>DUAL BASS RADIATORS</h3>
+    <p>Passive bass radiators deliver deep, powerful low-end in a speaker compact enough to hold in one hand.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">⚡</div>
+    <h3>9-HOUR BATTERY</h3>
+    <p>A built-in lithium-ion battery powers up to 9 hours of continuous playback on a single charge.</p>
+  </div>
+</div>
+
+<!-- SECTION 1: SOUND -->
+<hr class="section-divider">
+<div class="section">
+  <img class="section-img"
+    src="https://cdnp3.stackassets.com/7187b72e8f5660dca3b6b6e738594663edccf620/store/eaeb3b6575633b276150be2072a561c6ba22e42022916c87ed2ceccfba01/product_30143_product_shots2.jpg"
+    alt="Santana Leather Bound Speaker Sound">
+  <div class="section-text">
+    <div class="eyebrow">Sound</div>
+    <h2>360° Soundstage™</h2>
+    <p>3D sound technology delivers a full range of rich audio that fills the room from every angle. Dual passive bass radiators give you deep, powerful bass in a speaker you can hold in one hand. Digital sound processing keeps the audio crisp at any volume.</p>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION 2: BATTERY (reversed) -->
+<div class="section reverse">
+  <img class="section-img"
+    src="https://cdnp2.stackassets.com/2c9db532a73909cad091faa8444ffe4bad6b6168/store/1b04d5bfa5ad3bffa2291c4488a4dd405781a44121afd7674c90bd847fc2/product_30143_product_shots3.jpg"
+    alt="Santana Leather Bound Speaker Battery">
+  <div class="section-text">
+    <div class="eyebrow">Battery</div>
+    <h2>9 hours. No interruptions.</h2>
+    <p>A built-in lithium-ion battery delivers up to 9 hours of continuous playback on a single charge. Bluetooth 4.0 and NFC connectivity with a 32-foot wireless range means the music follows you wherever you go.</p>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- SECTION 3: DESIGN -->
+<div class="section">
+  <img class="section-img"
+    src="https://cdnp3.stackassets.com/8e9322df3c7a2f35665c11eb93a5cf03db3ca0b7/store/966d12fb2256c5d6e9323728d1eda09a34077dafc7d680f492678d99609d/product_30143_product_shots4.jpg"
+    alt="Santana Leather Bound Speaker Design">
+  <div class="section-text">
+    <div class="eyebrow">Design</div>
+    <h2>Built to stand out.</h2>
+    <p>Metal, leather, and cork construction with an integrated stand. Touch volume control on the end cap and hands-free calling with a built-in microphone. The Santana Leather Bound Speaker is as much a design object as it is a speaker.</p>
+  </div>
+</div>
+
+<!-- VIDEO -->
+<hr class="section-divider">
+<div class="video-section">
+  <h2>Hear It For Yourself</h2>
+  <div class="video-headline">Sound that fills the room.</div>
+  <div class="video-wrapper">
+    <iframe
+      src="https://www.youtube.com/embed/fbrWkGHe0FM"
+      title="Speaker Sound Demo"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+
+<!-- SPECS -->
+<hr class="section-divider">
+<div class="specs-section">
+  <h2>Technical Specifications</h2>
+  <div class="specs-grid">
+    <div class="spec-row"><span class="spec-key">Power Output</span><span class="spec-val">20W</span></div>
+    <div class="spec-row"><span class="spec-key">Battery Life</span><span class="spec-val">Up to 9 hours</span></div>
+    <div class="spec-row"><span class="spec-key">Wireless Range</span><span class="spec-val">32 ft</span></div>
+    <div class="spec-row"><span class="spec-key">Bluetooth</span><span class="spec-val">Version 4.0 + NFC</span></div>
+    <div class="spec-row"><span class="spec-key">Technology</span><span class="spec-val">360° Soundstage™</span></div>
+    <div class="spec-row"><span class="spec-key">Bass</span><span class="spec-val">Dual Passive Radiators</span></div>
+    <div class="spec-row"><span class="spec-key">Dimensions</span><span class="spec-val">8.1" H × 3.5" L × 3.1" W</span></div>
+    <div class="spec-row"><span class="spec-key">Materials</span><span class="spec-val">Metal, Leather, Cork</span></div>
+    <div class="spec-row"><span class="spec-key">Microphone</span><span class="spec-val">Built-in (hands-free)</span></div>
+    <div class="spec-row"><span class="spec-key">In the Box</span><span class="spec-val">Speaker, charger, micro-USB, 3.5mm aux, manual</span></div>
+  </div>
+</div>
+
+<!-- TRUST -->
+<div class="trust-bar">
+  <div class="trust-item">
+    <div class="trust-icon">✓</div>
+    <div>
+      <h4>1 Year Warranty</h4>
+      <p>Manufacturer's warranty included with every purchase.</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">↩</div>
+    <div>
+      <h4>30-Day Returns</h4>
+      <p>Not satisfied? Return it within 30 days, no questions asked.</p>
+    </div>
+  </div>
+  <div class="trust-item">
+    <div class="trust-icon">🔒</div>
+    <div>
+      <h4>Secure Checkout</h4>
+      <p>SSL-encrypted checkout. Your payment info is always safe.</p>
+    </div>
+  </div>
+</div>
+
+<!-- RELATED -->
+<div class="related">
+  <h2>You Might Also Like</h2>
+  <div class="related-grid">
+    <div class="related-card">
+      <div class="related-card-img">Samba Speaker</div>
+      <div class="related-card-info">
+        <h3>Samba Bluetooth Speaker</h3>
+        <div class="price">$XX.XX</div>
+      </div>
+    </div>
+    <div class="related-card">
+      <div class="related-card-img">Gypsy Earbuds</div>
+      <div class="related-card-info">
+        <h3>Gypsy Wireless Earbuds</h3>
+        <div class="price">$59.99</div>
+      </div>
+    </div>
+    <div class="related-card">
+      <div class="related-card-img">Headphones</div>
+      <div class="related-card-info">
+        <h3>Over-Ear Headphones</h3>
+        <div class="price">$XX.XX</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<hr class="section-divider">
+<div class="reviews-section">
+  <div class="reviews-header">
+    <h2>Customer Reviews</h2>
+    <div class="reviews-summary">
+      <div>
+        <div class="summary-score">4.6</div>
+        <div class="summary-stars">★★★★★</div>
+        <div class="summary-count">Based on 284 reviews</div>
+      </div>
+      <div class="summary-bars">
+        <div class="bar-row"><span>5★</span><div class="bar-track"><div class="bar-fill" style="width:72%"></div></div><span>72%</span></div>
+        <div class="bar-row"><span>4★</span><div class="bar-track"><div class="bar-fill" style="width:17%"></div></div><span>17%</span></div>
+        <div class="bar-row"><span>3★</span><div class="bar-track"><div class="bar-fill" style="width:6%"></div></div><span>6%</span></div>
+        <div class="bar-row"><span>2★</span><div class="bar-track"><div class="bar-fill" style="width:3%"></div></div><span>3%</span></div>
+        <div class="bar-row"><span>1★</span><div class="bar-track"><div class="bar-fill" style="width:2%"></div></div><span>2%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-title">Best speaker I've ever owned</div>
+      <div class="review-body">The sound quality on this thing is unreal for the size. I brought it to a cookout and people kept asking where the music was coming from — they couldn't believe it was coming from something so small. The leather looks premium too.</div>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer">Marcus T.</div>
+          <div class="verified">✔ Verified Purchase</div>
+        </div>
+        <div class="review-date">June 12, 2025</div>
+      </div>
+      <div class="review-helpful">Helpful? <span>Yes (24)</span> · <span>No (1)</span></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-title">Sounds way bigger than it looks</div>
+      <div class="review-body">I was skeptical about the 360° sound claim but it genuinely fills the room. Battery lasts all day exactly as advertised. The cork base keeps it from sliding around on any surface. Really well thought out.</div>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer">Jess R.</div>
+          <div class="verified">✔ Verified Purchase</div>
+        </div>
+        <div class="review-date">May 28, 2025</div>
+      </div>
+      <div class="review-helpful">Helpful? <span>Yes (18)</span> · <span>No (0)</span></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★☆</div>
+      <div class="review-title">Great gift, great build quality</div>
+      <div class="review-body">Bought this as a gift for my brother and he absolutely loves it. Build quality feels really solid — the leather wrap gives it a luxury feel. Only knock is the micro-USB charging port feels a little dated but it works fine.</div>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer">Diana L.</div>
+          <div class="verified">✔ Verified Purchase</div>
+        </div>
+        <div class="review-date">May 3, 2025</div>
+      </div>
+      <div class="review-helpful">Helpful? <span>Yes (11)</span> · <span>No (2)</span></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-title">Takes it everywhere</div>
+      <div class="review-body">This has replaced every other speaker I own. It's on my desk at work, on the porch on weekends, and in the bathroom in the morning. The 9-hour battery means I barely remember to charge it. Incredible value at this price.</div>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer">Kevin A.</div>
+          <div class="verified">✔ Verified Purchase</div>
+        </div>
+        <div class="review-date">April 19, 2025</div>
+      </div>
+      <div class="review-helpful">Helpful? <span>Yes (9)</span> · <span>No (0)</span></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <div class="review-title">Looks as good as it sounds</div>
+      <div class="review-body">Most speakers look like tech gadgets. This one looks like a piece of furniture. It sits on my bookshelf and people always comment on it before they even hear it. Then they hear it and their jaw drops. Win-win.</div>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer">Sofia M.</div>
+          <div class="verified">✔ Verified Purchase</div>
+        </div>
+        <div class="review-date">April 7, 2025</div>
+      </div>
+      <div class="review-helpful">Helpful? <span>Yes (15)</span> · <span>No (1)</span></div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-stars">★★★☆☆</div>
+      <div class="review-title">Good but pairing could be smoother</div>
+      <div class="review-body">Sound quality is excellent and the design is beautiful. My only issue is that Bluetooth pairing can be finicky — sometimes I have to reconnect twice. Once it's connected though it's rock solid. Would still recommend overall.</div>
+      <div class="review-meta">
+        <div>
+          <div class="reviewer">Tyler W.</div>
+          <div class="verified">✔ Verified Purchase</div>
+        </div>
+        <div class="review-date">March 22, 2025</div>
+      </div>
+      <div class="review-helpful">Helpful? <span>Yes (7)</span> · <span>No (3)</span></div>
+    </div>
+  </div>
+</div>
+
+<footer>© 2025 Santana Sounds &nbsp;·&nbsp; santanasounds.com &nbsp;·&nbsp; Powered by Shopify</footer>
+
+<script>
+  function setMain(el) {
+    document.getElementById('mainImg').src = el.src;
+    document.querySelectorAll('.hero-thumbs img').forEach(i => i.classList.remove('active'));
+    el.classList.add('active');
+  }
+  function adj(d) {
+    const el = document.getElementById('qty');
+    el.textContent = Math.max(1, parseInt(el.textContent) + d);
+  }
+</script>
+</body>
+</html>
