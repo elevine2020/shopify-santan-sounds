@@ -20,13 +20,11 @@ jobs:
 
       - name: Deploy theme to Shopify
         env:
-          SHOPIFY_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ACCESS_TOKEN }}
+          SHOPIFY_CLI_THEME_TOKEN: ${{ secrets.SHOPIFY_THEME_TOKEN }}
           SHOPIFY_FLAG_STORE: santana-sounds.myshopify.com
+          CI: true
         run: |
           shopify theme push \
             --store=santana-sounds.myshopify.com \
-            --password=${{ secrets.SHOPIFY_ACCESS_TOKEN }} \
             --theme=178598379767 \
-            --allow-live \
-            --no-delete \
-            --verbose
+            --allow-live
