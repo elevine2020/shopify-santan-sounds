@@ -1,0 +1,176 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": { "type": "vendor", "settings": {} },
+        "title": { "type": "title", "settings": {} },
+        "price": { "type": "price", "settings": {} },
+        "payment_terms": { "type": "payment_terms", "settings": {} },
+        "separator": { "type": "separator", "settings": {} },
+        "description": { "type": "description", "settings": {} },
+        "variant_picker": { "type": "variant_picker", "settings": {} },
+        "quantity_selector": { "type": "quantity_selector", "settings": {} },
+        "buy_buttons": { "type": "buy_buttons", "settings": {} },
+        "complementary_products": { "type": "complementary_products", "settings": {} }
+      },
+      "block_order": [
+        "vendor", "title", "price", "payment_terms", "separator",
+        "description", "variant_picker", "quantity_selector",
+        "buy_buttons", "complementary_products"
+      ],
+      "settings": {}
+    },
+    "scrolling-marquee": {
+      "type": "scrolling-content",
+      "blocks": {
+        "text-1": { "type": "text", "settings": { "text": "Gypsy" } },
+        "text-2": { "type": "text", "settings": { "text": "80 hours of playtime" } },
+        "text-3": { "type": "text", "settings": { "text": "Gypsy" } },
+        "text-4": { "type": "text", "settings": { "text": "80 hours of playtime" } },
+        "text-5": { "type": "text", "settings": { "text": "Gypsy" } },
+        "text-6": { "type": "text", "settings": { "text": "80 hours of playtime" } }
+      },
+      "block_order": ["text-1", "text-2", "text-3", "text-4", "text-5", "text-6"],
+      "settings": {
+        "background": "#1c1c1c",
+        "text_color": "#ffffff",
+        "scrolling_speed": 1,
+        "pause_on_hover": false,
+        "text_font": "heading",
+        "text_font_size_mobile": 28,
+        "text_font_size_desktop": 40,
+        "item_horizontal_spacing_mobile": 32,
+        "item_horizontal_spacing_desktop": 56,
+        "section_vertical_spacing_mobile": 16,
+        "section_vertical_spacing_desktop": 20,
+        "separate_section_with_border": false
+      }
+    },
+    "feature-icons": {
+      "type": "text-with-icons",
+      "blocks": {
+        "icon-battery": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-star",
+            "title": "80-hour battery",
+            "content": "<p>Dual 200mAh polymer batteries built into the neckband deliver an industry-leading 80 hours of playtime on a single charge.</p>"
+          }
+        },
+        "icon-sound": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-love",
+            "title": "10mm drivers",
+            "content": "<p>Oversized composite drivers deliver booming bass, well-balanced mid-ranges, and clear treble at any volume.</p>"
+          }
+        },
+        "icon-mic": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-secure-profile",
+            "title": "Hands-free controls",
+            "content": "<p>Voice-isolating microphone and built-in controls let you take calls and access your virtual assistant without reaching for your phone.</p>"
+          }
+        }
+      },
+      "block_order": ["icon-battery", "icon-sound", "icon-mic"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "icon_color": "#ffffff",
+        "text_alignment": "center",
+        "stack_on_mobile": false,
+        "separate_section_with_border": false
+      }
+    },
+    "section-battery": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": { "text": "Battery" }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": { "text": "80 hours. One charge.", "heading_tag": "h2" }
+        },
+        "body": {
+          "type": "richtext",
+          "settings": { "content": "<p>Massive dual 200mAh polymer batteries are built directly into the neckband, delivering an industry-leading 80 hours of playtime on a single charge. The longest of any Bluetooth earbuds available.</p>" }
+        }
+      },
+      "block_order": ["subheading", "heading", "body"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "image_position": "left",
+        "content_width": "medium",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false
+      }
+    },
+    "section-sound": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": { "text": "Sound" }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": { "text": "Hear every note", "heading_tag": "h2" }
+        },
+        "body": {
+          "type": "richtext",
+          "settings": { "content": "<p>Oversized 10mm composite drivers deliver booming bass, well-balanced mid-ranges, and clear treble. High-sensitivity diaphragms won't distort at maximum volume — so you always get the music as it was meant to sound.</p>" }
+        }
+      },
+      "block_order": ["subheading", "heading", "body"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "image_position": "right",
+        "content_width": "medium",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false
+      }
+    },
+    "section-design": {
+      "type": "image-with-text",
+      "blocks": {
+        "subheading": {
+          "type": "subheading",
+          "settings": { "text": "Design" }
+        },
+        "heading": {
+          "type": "heading",
+          "settings": { "text": "Built to stay in", "heading_tag": "h2" }
+        },
+        "body": {
+          "type": "richtext",
+          "settings": { "content": "<p>CNC-machined metal earbud casings create an optimum speaker cabinet for crisp, clear sound — and the durability to handle daily use. Silicone ear tips form a comfortable, custom fit for ears of all sizes.</p>" }
+        }
+      },
+      "block_order": ["subheading", "heading", "body"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "image_position": "left",
+        "content_width": "medium",
+        "reveal_on_scroll": true,
+        "separate_section_with_border": false
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "scrolling-marquee",
+    "feature-icons",
+    "section-battery",
+    "section-sound",
+    "section-design",
+    "related-products"
+  ]
+}
