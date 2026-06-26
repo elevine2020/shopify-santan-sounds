@@ -305,6 +305,12 @@
   .verified { font-size: 10px; color: #4caf50; letter-spacing: 0.5px; margin-top: 2px; }
   .review-helpful { font-size: 11px; color: #444; margin-top: 12px; }
   .review-helpful span { color: #888; text-decoration: underline; cursor: pointer; }
+  .reviewer-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .reviewer-avatar { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 1px solid #2a2a2a; }
+  .reviewer-name-wrap .reviewer { font-size: 13px; }
+  .reviewer-name-wrap .verified { margin-top: 1px; }
+  .review-photos { display: flex; gap: 8px; margin-top: 14px; }
+  .review-photos img { width: 72px; height: 72px; object-fit: cover; border-radius: 3px; border: 1px solid #2a2a2a; cursor: pointer; }
 
   /* FOOTER */
   footer {
@@ -549,86 +555,107 @@
 
   <div class="reviews-grid">
     <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-title">Best speaker I've ever owned</div>
-      <div class="review-body">The sound quality on this thing is unreal for the size. I brought it to a cookout and people kept asking where the music was coming from — they couldn't believe it was coming from something so small. The leather looks premium too.</div>
-      <div class="review-meta">
-        <div>
+      <div class="reviewer-row">
+        <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=12" alt="Marcus T.">
+        <div class="reviewer-name-wrap">
           <div class="reviewer">Marcus T.</div>
           <div class="verified">✔ Verified Purchase</div>
         </div>
-        <div class="review-date">June 12, 2025</div>
+        <div class="review-date" style="margin-left:auto">June 12, 2025</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-title">Best speaker I've ever owned</div>
+      <div class="review-body">The sound quality on this thing is unreal for the size. I brought it to a cookout and people kept asking where the music was coming from — they couldn't believe it was coming from something so small. The leather looks premium too.</div>
+      <div class="review-photos">
+        <img src="https://picsum.photos/seed/rev1a/200/200" alt="Customer photo">
+        <img src="https://picsum.photos/seed/rev1b/200/200" alt="Customer photo">
       </div>
       <div class="review-helpful">Helpful? <span>Yes (24)</span> · <span>No (1)</span></div>
     </div>
 
     <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-title">Sounds way bigger than it looks</div>
-      <div class="review-body">I was skeptical about the 360° sound claim but it genuinely fills the room. Battery lasts all day exactly as advertised. The cork base keeps it from sliding around on any surface. Really well thought out.</div>
-      <div class="review-meta">
-        <div>
+      <div class="reviewer-row">
+        <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=47" alt="Jess R.">
+        <div class="reviewer-name-wrap">
           <div class="reviewer">Jess R.</div>
           <div class="verified">✔ Verified Purchase</div>
         </div>
-        <div class="review-date">May 28, 2025</div>
+        <div class="review-date" style="margin-left:auto">May 28, 2025</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-title">Sounds way bigger than it looks</div>
+      <div class="review-body">I was skeptical about the 360° sound claim but it genuinely fills the room. Battery lasts all day exactly as advertised. The cork base keeps it from sliding around on any surface. Really well thought out.</div>
+      <div class="review-photos">
+        <img src="https://picsum.photos/seed/rev2a/200/200" alt="Customer photo">
       </div>
       <div class="review-helpful">Helpful? <span>Yes (18)</span> · <span>No (0)</span></div>
     </div>
 
     <div class="review-card">
-      <div class="review-stars">★★★★☆</div>
-      <div class="review-title">Great gift, great build quality</div>
-      <div class="review-body">Bought this as a gift for my brother and he absolutely loves it. Build quality feels really solid — the leather wrap gives it a luxury feel. Only knock is the micro-USB charging port feels a little dated but it works fine.</div>
-      <div class="review-meta">
-        <div>
+      <div class="reviewer-row">
+        <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=32" alt="Diana L.">
+        <div class="reviewer-name-wrap">
           <div class="reviewer">Diana L.</div>
           <div class="verified">✔ Verified Purchase</div>
         </div>
-        <div class="review-date">May 3, 2025</div>
+        <div class="review-date" style="margin-left:auto">May 3, 2025</div>
       </div>
+      <div class="review-stars">★★★★☆</div>
+      <div class="review-title">Great gift, great build quality</div>
+      <div class="review-body">Bought this as a gift for my brother and he absolutely loves it. Build quality feels really solid — the leather wrap gives it a luxury feel. Only knock is the micro-USB charging port feels a little dated but it works fine.</div>
       <div class="review-helpful">Helpful? <span>Yes (11)</span> · <span>No (2)</span></div>
     </div>
 
     <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-title">Takes it everywhere</div>
-      <div class="review-body">This has replaced every other speaker I own. It's on my desk at work, on the porch on weekends, and in the bathroom in the morning. The 9-hour battery means I barely remember to charge it. Incredible value at this price.</div>
-      <div class="review-meta">
-        <div>
+      <div class="reviewer-row">
+        <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=68" alt="Kevin A.">
+        <div class="reviewer-name-wrap">
           <div class="reviewer">Kevin A.</div>
           <div class="verified">✔ Verified Purchase</div>
         </div>
-        <div class="review-date">April 19, 2025</div>
+        <div class="review-date" style="margin-left:auto">April 19, 2025</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-title">Takes it everywhere</div>
+      <div class="review-body">This has replaced every other speaker I own. It's on my desk at work, on the porch on weekends, and in the bathroom in the morning. The 9-hour battery means I barely remember to charge it. Incredible value at this price.</div>
+      <div class="review-photos">
+        <img src="https://picsum.photos/seed/rev4a/200/200" alt="Customer photo">
+        <img src="https://picsum.photos/seed/rev4b/200/200" alt="Customer photo">
+        <img src="https://picsum.photos/seed/rev4c/200/200" alt="Customer photo">
       </div>
       <div class="review-helpful">Helpful? <span>Yes (9)</span> · <span>No (0)</span></div>
     </div>
 
     <div class="review-card">
-      <div class="review-stars">★★★★★</div>
-      <div class="review-title">Looks as good as it sounds</div>
-      <div class="review-body">Most speakers look like tech gadgets. This one looks like a piece of furniture. It sits on my bookshelf and people always comment on it before they even hear it. Then they hear it and their jaw drops. Win-win.</div>
-      <div class="review-meta">
-        <div>
+      <div class="reviewer-row">
+        <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=25" alt="Sofia M.">
+        <div class="reviewer-name-wrap">
           <div class="reviewer">Sofia M.</div>
           <div class="verified">✔ Verified Purchase</div>
         </div>
-        <div class="review-date">April 7, 2025</div>
+        <div class="review-date" style="margin-left:auto">April 7, 2025</div>
+      </div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-title">Looks as good as it sounds</div>
+      <div class="review-body">Most speakers look like tech gadgets. This one looks like a piece of furniture. It sits on my bookshelf and people always comment on it before they even hear it. Then they hear it and their jaw drops. Win-win.</div>
+      <div class="review-photos">
+        <img src="https://picsum.photos/seed/rev5a/200/200" alt="Customer photo">
       </div>
       <div class="review-helpful">Helpful? <span>Yes (15)</span> · <span>No (1)</span></div>
     </div>
 
     <div class="review-card">
-      <div class="review-stars">★★★☆☆</div>
-      <div class="review-title">Good but pairing could be smoother</div>
-      <div class="review-body">Sound quality is excellent and the design is beautiful. My only issue is that Bluetooth pairing can be finicky — sometimes I have to reconnect twice. Once it's connected though it's rock solid. Would still recommend overall.</div>
-      <div class="review-meta">
-        <div>
+      <div class="reviewer-row">
+        <img class="reviewer-avatar" src="https://i.pravatar.cc/80?img=53" alt="Tyler W.">
+        <div class="reviewer-name-wrap">
           <div class="reviewer">Tyler W.</div>
           <div class="verified">✔ Verified Purchase</div>
         </div>
-        <div class="review-date">March 22, 2025</div>
+        <div class="review-date" style="margin-left:auto">March 22, 2025</div>
       </div>
+      <div class="review-stars">★★★☆☆</div>
+      <div class="review-title">Good but pairing could be smoother</div>
+      <div class="review-body">Sound quality is excellent and the design is beautiful. My only issue is that Bluetooth pairing can be finicky — sometimes I have to reconnect twice. Once it's connected though it's rock solid. Would still recommend overall.</div>
       <div class="review-helpful">Helpful? <span>Yes (7)</span> · <span>No (3)</span></div>
     </div>
   </div>
