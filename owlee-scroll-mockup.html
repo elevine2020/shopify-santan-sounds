@@ -322,6 +322,73 @@
     font-size: 11px;
     letter-spacing: 1px;
   }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    /* Nav */
+    nav { padding: 0 16px; }
+    .nav-links { display: none; }
+    .nav-cta { font-size: 10px; padding: 6px 12px; }
+
+    /* Hero */
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 24px 16px;
+      gap: 32px;
+    }
+    .hero-info { padding: 0; }
+    .hero-info h1 { font-size: 26px; }
+    .price { font-size: 26px; }
+    .hero-thumbs img { width: calc(25% - 6px); }
+    .btn-primary, .btn-secondary { font-size: 12px; padding: 13px; }
+
+    /* Marquee */
+    .marquee-track span { font-size: 10px; margin-right: 32px; }
+
+    /* Features */
+    .features { grid-template-columns: 1fr; }
+    .feature { padding: 28px 20px; }
+    .feature p { max-width: 100%; }
+
+    /* Image + text sections */
+    .section {
+      grid-template-columns: 1fr;
+      min-height: unset;
+    }
+    .section.reverse { direction: ltr; }
+    .section-img { min-height: 260px; }
+    .section-text { padding: 36px 20px; }
+    .section-text h2 { font-size: 24px; }
+
+    /* Video */
+    .video-section { padding: 48px 16px; }
+    .video-section .video-headline { font-size: 20px; }
+
+    /* Specs */
+    .specs-section { padding: 48px 16px; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .spec-row { font-size: 12px; padding: 14px 12px; }
+
+    /* Trust */
+    .trust-bar { grid-template-columns: 1fr; }
+    .trust-item { padding: 20px 20px; }
+
+    /* Related */
+    .related { padding: 48px 16px; }
+    .related-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    /* Reviews */
+    .reviews-section { padding: 48px 16px; }
+    .reviews-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+    .reviews-summary { flex-direction: row; width: 100%; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .review-photos img { width: 64px; height: 64px; }
+    .summary-bars { min-width: 0; }
+  }
 </style>
 </head>
 <body>
