@@ -13,13 +13,21 @@
   "sections": {
     "announcement-bar": {
       "type": "announcement-bar",
+      "blocks": {
+        "announcement-test": {
+          "type": "message",
+          "settings": {
+            "text": "hello"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-test"
+      ],
       "settings": {
         "color_scheme": "scheme-3",
         "enable_sticky": false,
-        "autoplay": false,
-        "cycle_speed": 5,
-        "desktop_font_size": 11,
-        "mobile_font_size": 10
+        "autoplay": false
       }
     },
     "countdown-timer": {
@@ -46,8 +54,6 @@
         "logo_max_width": 130,
         "logo_mobile_max_width": 80,
         "menu": "main-menu",
-        "sidebar_menu": "",
-        "customer_account_menu": "customer-account-main-menu",
         "menu_open_trigger": "hover",
         "menu_text_font": "heading",
         "enable_search": true,
