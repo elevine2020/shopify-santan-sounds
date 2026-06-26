@@ -10,14 +10,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
       - name: Install Shopify CLI
-        run: npm install -g @shopify/cli@latest
+        run: npm install -g @shopify/cli@latest @shopify/theme@latest
 
       - name: Deploy theme to Shopify
+        env:
+          SHOPIFY_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ACCESS_TOKEN }}
+          SHOPIFY_FLAG_STORE: santana-sounds.myshopify.com
         run: |
           shopify theme push \
             --store=santana-sounds.myshopify.com \
-            --access-token=${{ secrets.SHOPIFY_ACCESS_TOKEN }} \
+            --password=${{ secrets.SHOPIFY_ACCESS_TOKEN }} \
             --theme=178598379767 \
             --allow-live \
-            --no-delete
+            --no-delete \
+            --verbose
